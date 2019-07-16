@@ -12,26 +12,19 @@
     <p>
         <form action="/poll" method="post">
             <!-- Hidden values describing code snippet. -->
-
             <input type="hidden" name="file_path" value="{{ candidate_info.file_path }}">
             <input type="hidden" name="given_labels" value="{{ candidate_info.given_labels }}">
-
             <!-- Radio buttons for classification. -->
             {% for e in data.fields %}
             <input type="radio" name="field" value="{{ e }}"> {{ e }}<br>
             {% endfor %}
-
             <!-- Submit button, to confirm choice. -->
             <input type="submit" value="Vote" />
         </form>
     </p>
-
-    <p><b>File path:</b> {{ candidate_info.file_path }}</p>
-
     <p><b>Given labels:</b> {{ candidate_info.given_labels }}</p>
-
     <img src="static/data/files/{{ candidate_info.file_path }}">
-
+    <p><b>File path:</b> {{ candidate_info.file_path }}</p>
 </body>
 
 </html>
